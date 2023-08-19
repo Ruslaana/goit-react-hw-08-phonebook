@@ -7,7 +7,7 @@ import {
   Button,
 } from './ContactItem.styled';
 import { useDispatch } from 'react-redux';
-import { delContact } from '../../redux/thunk';
+import { delContact } from '../../redux/operations';
 
 const ContactsItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
