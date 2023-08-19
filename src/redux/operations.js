@@ -3,16 +3,16 @@ import axios from 'axios';
 
 export const $instance = axios.create({
   baseURL: 'https://connections-api.herokuapp.com',
-  headers: {
-    Authorization: `Bearer token...`,
-  },
+  // headers: {
+  //   Authorization: `Bearer token...`,
+  // },
 });
 
 export const setToken = token => {
-  $instance.defaults.headers['authorization'] = `Bearer ${token}`;
+  $instance.defaults.headers['Authorization'] = `Bearer ${token}`;
 };
 export const clearToken = () => {
-  $instance.defaults.headers['authorization'] = '';
+  $instance.defaults.headers['Authorization'] = '';
 };
 
 //----- registration -----
