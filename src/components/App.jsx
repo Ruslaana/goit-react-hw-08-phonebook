@@ -9,9 +9,9 @@ import PrivateRoute from './PrivateRoute';
 
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
-const Contacts = lazy(() => import('pages/Contacts'));
-const Register = lazy(() => import('pages/SignUp'));
-const LogIn = lazy(() => import('pages/LogIn'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const Register = lazy(() => import('pages/SignUp/SignUp'));
+const LogIn = lazy(() => import('pages/LogIn/Login'));
 
 export const App = () => {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Loader from '../components/Loader/Loader';
+import Loader from '../../components/Loader/Loader';
 
 import { selectAuthentificated, selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { addContact, deleteContact, refreshUserThunk } from 'redux/operations';
