@@ -1,28 +1,42 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
 import PrivateRoute from './components/PrivateRoute';
-import Layout from 'components/Layout/Layout';
+import Layout from './components/Layout/Layout';
+import { selectAuthentificated, selectToken } from 'redux/selectors';
+import { refreshUserThunk } from 'redux/operations';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
-const ContactsPage = lazy(() => import('pages/Contacts/Contacts'));
-const RegisterPage = lazy(() => import('pages/SignUp/SignUp'));
-const LoginPage = lazy(() => import('pages/LogIn/Login'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const Register = lazy(() => import('pages/SignUp/SignUp'));
+const LogIn = lazy(() => import('pages/LogIn/Login'));
 
 const App = () => {
+  const dispatch = useDispatch();
+  const token = useSelector(selectToken);
+  const authentificated = useSelector(selectAuthentificated);
+
+  useEffect(() => {
+    if (!token || authentificated) return;
+
+    dispatch(refreshUserThunk());
+  }, [token, dispatch, authentificated]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<LogIn />} />
         <Route
           path="/contacts"
           element={
             <PrivateRoute redirectTo="/login">
-              <ContactsPage />
+              <Contacts />
             </PrivateRoute>
           }
         />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
