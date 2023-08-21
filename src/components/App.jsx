@@ -40,41 +40,5 @@ export const App = () => {
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
-
-    // <div>
-    //   <header>
-    //     <nav>
-    //       <NavLink to="/">Home</NavLink>
-    //       {authentificated ? (
-    //         <>
-    //           <NavLink to="/contacts">Contacts</NavLink>
-    //           <button onClick={handleLogOut}>Log Out</button>
-    //         </>
-    //       ) : (
-    //         <>
-    //           <NavLink to="/login">Login</NavLink>
-    //           <NavLink to="/register">Register</NavLink>
-    //         </>
-    //       )}
-    //     </nav>
-    //   </header>
-    //   <main>
-    //     <Suspense fallback={<Loader />}>
-    //       <Routes>
-    //         <Route path="/" element={<HomePage />} />
-    //         <Route
-    //           path="/contacts"
-    //           element={
-    //             <PrivateRoute redirectTo='/login'>
-    //               <Contacts />
-    //             </PrivateRoute>
-    //           }
-    //         />
-    //         <Route path="/login" element={<LogIn />} />
-    //         <Route path="/register" element={<Register />} />
-    //       </Routes>
-    //     </Suspense>
-    //   </main>
-    // </div>
   );
 };

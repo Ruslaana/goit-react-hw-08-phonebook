@@ -44,8 +44,6 @@ const LoginPage = () => {
             alignItems: 'center',
           }}
         >
-          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          </Avatar> */}
           <Typography component="h1" variant="h5">
             Log in
           </Typography>

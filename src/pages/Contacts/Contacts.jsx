@@ -6,17 +6,10 @@ import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { addContact, deleteContact } from 'redux/operations';
 
 const Contacts = () => {
-  // const authentificated = useSelector(selectAuthentificated);
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (!authentificated) return;
-
-  //   dispatch(refreshUserThunk());
-  // }, [authentificated, dispatch]);
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContact(contactId));
