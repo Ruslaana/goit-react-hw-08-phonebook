@@ -1,12 +1,10 @@
 import React from 'react'
 
-function HomePage() {
+const HomePage = () => {
   return (
     <div>
-      
+      <p>Welcome to your Contacts</p>
     </div>
   )
 }
-
-export default HomePage
-
+export default HomePage;

@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
-import Layout from 'components/Layout';
+import Layout from 'components/Layout/Layout';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const ContactsPage = lazy(() => import('pages/Contacts'));

@@ -3,7 +3,8 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/selectors';
 import { logOutUserThunk } from 'redux/operations';
-import Loader from './Loader';
+import Loader from '../Loader';
+import { StyledA, StyledFooter, StyledP } from './Layout.styled';
 
 const Layout = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -14,7 +15,7 @@ const Layout = () => {
   };
 
   return (
-    <div>
+    <>
       <header>
         <nav>
           <NavLink to="/">Home</NavLink>
@@ -36,20 +37,20 @@ const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
-      <footer>
-        <p>
+      <StyledFooter>
+        <StyledP>
           All Rights Reserved ||{' '}
-          <a
+          <StyledA
             href="https://github.com/Ruslaana"
             target="_blank"
             rel="noopener noreferrer"
           >
             Developed by Ruslana Onyshchuk
-          </a>
+          </StyledA>
           &#169; 2023
-        </p>
-      </footer>
-    </div>
+        </StyledP>
+      </StyledFooter>
+    </>
   );
 };
 
