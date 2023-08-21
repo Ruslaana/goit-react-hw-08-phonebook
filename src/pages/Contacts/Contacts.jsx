@@ -99,11 +99,13 @@ const Contacts = () => {
 
       {isLoading && <Loader />}
       {error && <p>Oops, some error occured... {error}</p>}
-      <ul>
+      <ul style={{ padding: "0", marginTop: "40px"}}>
         {showContacts &&
           contacts.map(contact => {
             return (
-              <li key={contact.id}>
+              <li 
+              style={{ listStyleType: "none", padding: '0'}}
+              key={contact.id}>
                 <h3>Name: {contact.name}</h3>
                 <p>Number: {contact.number}</p>
                 <Button
