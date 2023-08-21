@@ -41,7 +41,7 @@ const Layout = () => {
                       component="div"
                       sx={{ flexGrow: 1 }}
                     >
-                      Contacts
+                      HomePage
                     </Typography>
                   </StyledNavLink>
                   <StyledNavLink to="/login" color="inherit">
