@@ -45,7 +45,7 @@ const Layout = () => {
                     </Typography>
                   </StyledNavLink>
                   <StyledNavLink to="/login" color="inherit">
-                    Login
+                    LogIn
                   </StyledNavLink>
                   <StyledNavLink to="/register">SignUp</StyledNavLink>
                 </Toolbar>
