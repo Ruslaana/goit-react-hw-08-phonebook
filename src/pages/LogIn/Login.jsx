@@ -1,5 +1,5 @@
-import { ThemeProvider } from '@emotion/react';
-import { Box, Button, Checkbox, Container, CssBaseline, FormControlLabel, TextField, Typography, createTheme } from '@mui/material';
+// import { ThemeProvider } from '@emotion/react';
+import { Box, Button, Checkbox, Container, CssBaseline, FormControlLabel, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
@@ -27,10 +27,10 @@ const LoginPage = () => {
   };
 
   if (authenticated) return <Navigate to="/contacts" />;
-  const defaultTheme = createTheme();
+  // const defaultTheme = createTheme();
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    // <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -80,7 +80,7 @@ const LoginPage = () => {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }
 

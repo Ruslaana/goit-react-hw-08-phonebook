@@ -2,32 +2,63 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Loader from '../../components/Loader/Loader';
 
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-import { addContact, deleteContact } from 'redux/operations';
+import {
+  selectAuthentificated,
+  selectContacts,
+  selectError,
+  selectIsLoading,
+} from 'redux/selectors';
+import { addContact, deleteContact, fetchAllContacts } from 'redux/operations';
 import { Button } from '@mui/material';
+import { useEffect, useState } from 'react';
 
 const Contacts = () => {
+
+  const authentificated = useSelector(selectAuthentificated);
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+
   const dispatch = useDispatch();
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContact(contactId));
   };
 
+  useEffect(() => {
+    if (!authentificated) return;
+    dispatch(fetchAllContacts());
+  }, [authentificated, dispatch]);
+
+  const handleChange = e => {
+    switch (e.target.name) {
+      case 'name':
+        setName(e.target.value);
+        break;
+      case 'number':
+        setNumber(e.target.value);
+        break;
+      default:
+        return;
+    }
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
 
-    const form = event.currentTarget;
+    // const form = event.currentTarget;
 
-    const name = form.elements.contactName.value;
-    const number = form.elements.contactNumber.value;
+    // const name = form.elements.contactName.value;
+    // const number = form.elements.contactNumber.value;
 
     if (contacts.some(contact => contact.name === name))
       return alert(`Contact with name ${name} already exists!`);
 
     dispatch(addContact({ name, number }));
+    setName('');
+    setNumber('');
   };
 
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
@@ -36,15 +67,33 @@ const Contacts = () => {
       <form onSubmit={handleSubmit}>
         <label>
           <p>Name:</p>
-          <input name="contactName" type="text" required />
+          <input
+            onChange={handleChange}
+            value={name}
+            name="name"
+            type="text"
+            required
+          />
         </label>
         <br />
         <label>
           <p>Number:</p>
-          <input name="contactNumber" type="text" required />
+          <input
+            onChange={handleChange}
+            value={number}
+            name="number"
+            type="text"
+            required
+          />
         </label>
         <br />
-        <Button style={{marginTop: '20px', marginLeft: '20px'}} variant="contained" htmlType="submit">Add contact</Button>
+        <Button
+          style={{ marginTop: '20px', marginLeft: '20px' }}
+          variant="contained"
+          type="submit"
+        >
+          Add contact
+        </Button>
       </form>
 
       {isLoading && <Loader />}

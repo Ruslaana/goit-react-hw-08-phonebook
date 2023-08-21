@@ -16,7 +16,7 @@ export const StyledNavLink = styled(NavLink)`
 
 export const StyledFooter = styled.footer`
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   justify-content: center;
