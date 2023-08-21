@@ -19,39 +19,41 @@ const Layout = () => {
     <>
       <header>
         <nav>
-          {authentificated ? (
-            <>
-              <StyledNavLink to="/contacts">Contacts</StyledNavLink>
-              <button onClick={handleLogOut}>Log Out</button>
-            </>
-          ) : (
-            <Box sx={{ flexGrow: 1 }}>
-              <AppBar position="static">
-                <Toolbar>
-                  <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                  ></IconButton>
-                  <StyledNavLink to="/">
-                    <Typography
-                      variant="h6"
-                      component="div"
-                      sx={{ flexGrow: 1 }}
-                    >
-                      HomePage
-                    </Typography>
-                  </StyledNavLink>
-                  <StyledNavLink to="/login" color="inherit">
-                    LogIn
-                  </StyledNavLink>
-                  <StyledNavLink to="/register">SignUp</StyledNavLink>
-                </Toolbar>
-              </AppBar>
-            </Box>
-          )}
+          <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+              <Toolbar>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  sx={{ mr: 2 }}
+                ></IconButton>
+                {!authentificated ? (
+                  <>
+                    <StyledNavLink to="/">
+                      <Typography
+                        variant="h6"
+                        component="div"
+                        sx={{ flexGrow: 1 }}
+                      >
+                        HomePage
+                      </Typography>
+                    </StyledNavLink>
+                    <StyledNavLink to="/login" color="inherit">
+                      LogIn
+                    </StyledNavLink>
+                    <StyledNavLink to="/register">SignUp</StyledNavLink>{' '}
+                  </>
+                ) : (
+                  <>
+                    <StyledNavLink to="/contacts">Contacts</StyledNavLink>
+                    <button onClick={handleLogOut}>Log Out</button>
+                  </>
+                )}
+              </Toolbar>
+            </AppBar>
+          </Box>
         </nav>
       </header>
       <main>

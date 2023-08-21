@@ -1,23 +1,22 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Loader from '../../components/Loader/Loader';
 
-import { selectAuthentificated, selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-import { addContact, deleteContact, refreshUserThunk } from 'redux/operations';
+import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
+import { addContact, deleteContact } from 'redux/operations';
 
 const Contacts = () => {
-  const authentificated = useSelector(selectAuthentificated);
+  // const authentificated = useSelector(selectAuthentificated);
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!authentificated) return;
+  // useEffect(() => {
+  //   if (!authentificated) return;
 
-    dispatch(refreshUserThunk());
-  }, [authentificated, dispatch]);
+  //   dispatch(refreshUserThunk());
+  // }, [authentificated, dispatch]);
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContact(contactId));
