@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/selectors';
 import { logOutUserThunk } from 'redux/operations';
-import Loader from '../Loader';
+import Loader from '../Loader/Loader';
 import { StyledA, StyledFooter, StyledNavLink, StyledP } from './Layout.styled';
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 

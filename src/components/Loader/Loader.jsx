@@ -1,7 +1,9 @@
 import { RotatingLines } from 'react-loader-spinner';
+import { Container } from './Loader.styled';
 
 const Loader = () => {
   return (
+    <Container>
     <RotatingLines
       strokeColor={'#3f51b5'}
       strokeWidth="5"
@@ -9,6 +11,7 @@ const Loader = () => {
       width="196"
       visible={true}
     />
+      </Container>
   );
 };
 
