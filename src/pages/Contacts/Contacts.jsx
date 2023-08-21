@@ -4,6 +4,7 @@ import Loader from '../../components/Loader/Loader';
 
 import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { addContact, deleteContact } from 'redux/operations';
+import { Button } from '@mui/material';
 
 const Contacts = () => {
   const contacts = useSelector(selectContacts);
@@ -43,7 +44,7 @@ const Contacts = () => {
           <input name="contactNumber" type="text" required />
         </label>
         <br />
-        <button htmlType="submit">Add contact</button>
+        <Button variant="contained" htmlType="submit">Add contact</Button>
       </form>
 
       {isLoading && <Loader />}

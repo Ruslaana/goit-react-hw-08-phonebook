@@ -4,8 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/selectors';
 import { logOutUserThunk } from 'redux/operations';
 import Loader from '../Loader/Loader';
-import { StyledA, StyledFooter, StyledNavLink, StyledP } from './Layout.styled';
-import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
+import { StyledA, StyledAvatar, StyledFooter, StyledNavLink, StyledP } from './Layout.styled';
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  IconButton,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 
 const Layout = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -48,7 +56,12 @@ const Layout = () => {
                 ) : (
                   <>
                     <StyledNavLink to="/contacts">Contacts</StyledNavLink>
-                    <button onClick={handleLogOut}>Log Out</button>
+                    <Button variant="contained" onClick={handleLogOut}>
+                      Log Out
+                    </Button>
+                    <StyledAvatar>
+                      <Avatar src="/broken-image.jpg" />
+                    </StyledAvatar>
                   </>
                 )}
               </Toolbar>

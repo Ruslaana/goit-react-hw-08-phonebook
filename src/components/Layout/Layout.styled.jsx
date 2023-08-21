@@ -14,7 +14,6 @@ export const StyledNavLink = styled(NavLink)`
   }
 `;
 
-
 export const StyledFooter = styled.footer`
   display: flex;
   position: absolute;
@@ -34,3 +33,8 @@ export const StyledA = styled.a`
   color: black
 `;
 
+
+export const StyledAvatar = styled.div`
+  position: absolute;
+  right: 20px;
+`
