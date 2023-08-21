@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/selectors';
 import { logOutUserThunk } from 'redux/operations';

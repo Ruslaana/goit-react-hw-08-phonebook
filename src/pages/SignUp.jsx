@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Container, CssBaseline, Grid, TextField, ThemeProvider, Typography, createTheme } from '@mui/material';
+import { Box, Button, Container, CssBaseline, Grid, TextField, ThemeProvider, Typography, createTheme } from '@mui/material';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
@@ -14,9 +14,14 @@ const SignUpPage = () => {
 
     const form = event.currentTarget;
 
-    const name = form.elements.userName.value;
-    const email = form.elements.userEmail.value;
-    const password = form.elements.userPassword.value;
+  const name = form.elements.userName ? form.elements.userName.value : '';
+  const email = form.elements.userEmail ? form.elements.userEmail.value : '';
+  const password = form.elements.userPassword ? form.elements.userPassword.value : '';
+
+
+    // const name = form.elements.userName.value;
+    // const email = form.elements.userEmail.value;
+    // const password = form.elements.userPassword.value;
 
     dispatch(
       registerUserThunk({
@@ -44,9 +49,9 @@ const SignUpPage = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            {/* <LockOutlinedIcon /> */}
-          </Avatar>
+          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar> */}
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
