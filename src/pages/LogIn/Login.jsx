@@ -15,9 +15,6 @@ const LoginPage = () => {
 
     const form = event.currentTarget;
 
-    // const email = form.elements.userEmail.value;
-    // const password = form.elements.userPassword.value;
-
     const email = form.elements.email.value;
     const password = form.elements.password.value;
 

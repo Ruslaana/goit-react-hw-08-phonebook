@@ -44,7 +44,7 @@ const Contacts = () => {
           <input name="contactNumber" type="text" required />
         </label>
         <br />
-        <Button variant="contained" htmlType="submit">Add contact</Button>
+        <Button style={{marginTop: '20px', marginLeft: '20px'}} variant="contained" htmlType="submit">Add contact</Button>
       </form>
 
       {isLoading && <Loader />}
