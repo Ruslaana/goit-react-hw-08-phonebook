@@ -99,6 +99,7 @@ const Contacts = () => {
 
       {isLoading && <Loader />}
       {error && <p>Oops, some error occured... {error}</p>}
+      <h2>Contacts 🔎 </h2>
       <ul style={{ padding: "0", marginTop: "40px"}}>
         {showContacts &&
           contacts.map(contact => {
