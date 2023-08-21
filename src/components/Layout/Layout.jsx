@@ -5,6 +5,13 @@ import { selectAuthentificated } from 'redux/selectors';
 import { logOutUserThunk } from 'redux/operations';
 import Loader from '../Loader';
 import { StyledA, StyledFooter, StyledP } from './Layout.styled';
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 
 const Layout = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -18,17 +25,33 @@ const Layout = () => {
     <>
       <header>
         <nav>
-          <NavLink to="/">Home</NavLink>
           {authentificated ? (
             <>
               <NavLink to="/contacts">Contacts</NavLink>
               <button onClick={handleLogOut}>Log Out</button>
             </>
           ) : (
-            <>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/register">Register</NavLink>
-            </>
+            <Box sx={{ flexGrow: 1 }}>
+              <AppBar position="static">
+                <Toolbar>
+                  <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    sx={{ mr: 2 }}
+                  >
+                  </IconButton>
+                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    Contacts
+                  </Typography>
+                  <NavLink to="/login" color="inherit">
+                    Login
+                  </NavLink>
+                  <NavLink to="/register">Sign Up</NavLink>
+                </Toolbar>
+              </AppBar>
+            </Box>
           )}
         </nav>
       </header>

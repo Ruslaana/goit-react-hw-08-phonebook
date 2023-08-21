@@ -5,7 +5,7 @@ import Layout from 'components/Layout/Layout';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const ContactsPage = lazy(() => import('pages/Contacts'));
-const RegisterPage = lazy(() => import('pages/Register'));
+const RegisterPage = lazy(() => import('pages/SignUp'));
 const LoginPage = lazy(() => import('pages/Login'));
 
 const App = () => {

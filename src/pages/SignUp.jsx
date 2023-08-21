@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom';
 import { registerUserThunk } from 'redux/operations';
 import { selectAuthentificated } from 'redux/selectors';
 
-const RegisterPage = () => {
+const SignUpPage = () => {
   const dispatch = useDispatch();
   const authenticated = useSelector(selectAuthentificated);
 
@@ -110,4 +110,4 @@ const RegisterPage = () => {
   );
 }
 
-export default RegisterPage;
+export default SignUpPage;
