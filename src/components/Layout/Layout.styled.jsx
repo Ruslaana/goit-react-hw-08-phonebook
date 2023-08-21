@@ -21,7 +21,7 @@ export const StyledFooter = styled.footer`
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 100px; 
+  height: 50px; 
 `;
 
 export const StyledP = styled.p`

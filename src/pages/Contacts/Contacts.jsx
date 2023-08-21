@@ -9,7 +9,7 @@ import {
   selectIsLoading,
 } from 'redux/selectors';
 import { addContact, deleteContact, fetchAllContacts } from 'redux/operations';
-import { Button } from '@mui/material';
+import { Button, Container, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 const Contacts = () => {
@@ -57,11 +57,14 @@ const Contacts = () => {
 
   const showContacts = Array.isArray(contacts) && contacts.length > 0;
   return (
-    <section>
+    <Container>
       <form onSubmit={handleSubmit}>
         <label>
           <p>Name:</p>
-          <input
+          <TextField 
+            fullWidth 
+            label="Name" 
+            id="fullWidth"
             onChange={handleChange}
             value={name}
             name="name"
@@ -72,7 +75,10 @@ const Contacts = () => {
         <br />
         <label>
           <p>Number:</p>
-          <input
+          <TextField 
+            fullWidth 
+            label="Number" 
+            id="fullWidth"            
             onChange={handleChange}
             value={number}
             name="number"
@@ -82,7 +88,8 @@ const Contacts = () => {
         </label>
         <br />
         <Button
-          style={{ marginTop: '20px', marginLeft: '20px' }}
+          style={{ marginTop: '20px', padding: '10px, 20px' }}
+          size="large"
           variant="contained"
           type="submit"
         >
@@ -110,7 +117,7 @@ const Contacts = () => {
             );
           })}
       </ul>
-    </section>
+    </Container>
   );
 };
 
