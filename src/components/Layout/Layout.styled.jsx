@@ -16,7 +16,6 @@ export const StyledP = styled.p`
 `;
 
 export const StyledA = styled.a`
-  text-decoration: none;
-  color: #333;
+  color: black
 `;
 
