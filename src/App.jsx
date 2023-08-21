@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute';
 import Layout from 'components/Layout/Layout';
 
-const HomePage = lazy(() => import('pages/HomePage'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const ContactsPage = lazy(() => import('pages/Contacts'));
 const RegisterPage = lazy(() => import('pages/SignUp'));
 const LoginPage = lazy(() => import('pages/Login'));

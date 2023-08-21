@@ -4,14 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/selectors';
 import { logOutUserThunk } from 'redux/operations';
 import Loader from '../Loader';
-import { StyledA, StyledFooter, StyledP } from './Layout.styled';
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@mui/material';
+import { StyledA, StyledFooter, StyledNavLink, StyledP } from './Layout.styled';
+import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material';
 
 const Layout = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -27,7 +21,7 @@ const Layout = () => {
         <nav>
           {authentificated ? (
             <>
-              <NavLink to="/contacts">Contacts</NavLink>
+              <StyledNavLink to="/contacts">Contacts</StyledNavLink>
               <button onClick={handleLogOut}>Log Out</button>
             </>
           ) : (
@@ -40,15 +34,20 @@ const Layout = () => {
                     color="inherit"
                     aria-label="menu"
                     sx={{ mr: 2 }}
-                  >
-                  </IconButton>
-                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Contacts
-                  </Typography>
-                  <NavLink to="/login" color="inherit">
+                  ></IconButton>
+                  <StyledNavLink to="/">
+                    <Typography
+                      variant="h6"
+                      component="div"
+                      sx={{ flexGrow: 1 }}
+                    >
+                      Contacts
+                    </Typography>
+                  </StyledNavLink>
+                  <StyledNavLink to="/login" color="inherit">
                     Login
-                  </NavLink>
-                  <NavLink to="/register">SignUp</NavLink>
+                  </StyledNavLink>
+                  <StyledNavLink to="/register">SignUp</StyledNavLink>
                 </Toolbar>
               </AppBar>
             </Box>

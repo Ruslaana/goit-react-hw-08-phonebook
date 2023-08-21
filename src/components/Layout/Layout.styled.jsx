@@ -1,4 +1,19 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: #000; 
+  margin-right: 20px;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 
 export const StyledFooter = styled.footer`
   display: flex;
