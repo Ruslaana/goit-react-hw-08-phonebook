@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/983.f44efcb5.chunk.js","mappings":"mKASA,UAPiB,WACf,OACE,0BACE,uBAAG,8BAGR,C","sources":["pages/HomePage.jsx"],"sourcesContent":["import React from 'react'\n\nconst HomePage = () => {\n  return (\n    <div>\n      <p>Welcome to your Contacts</p>\n    </div>\n  )\n}\nexport default HomePage;"],"names":[],"sourceRoot":""}
