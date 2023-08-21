@@ -56,7 +56,6 @@ const authSlice = createSlice({
       .addCase(refreshUserThunk.pending, state => {
         state.isLoading = true;
         state.error = null;
-        state.authentificated = false;
       })
       .addCase(refreshUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -71,7 +70,6 @@ const authSlice = createSlice({
       .addCase(logOutUserThunk.pending, state => {
         state.isLoading = true;
         state.error = null;
-        state.authentificated = false;
       })
       .addCase(logOutUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;

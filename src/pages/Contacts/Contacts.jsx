@@ -13,7 +13,6 @@ import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 const Contacts = () => {
-
   const authentificated = useSelector(selectAuthentificated);
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
@@ -105,13 +104,13 @@ const Contacts = () => {
               <li key={contact.id}>
                 <h3>Name: {contact.name}</h3>
                 <p>Number: {contact.number}</p>
-                <button
+                <Button
                   onClick={() => handleDeleteContact(contact.id)}
                   type="button"
-                  aria-label="Delete contact"
+                  variant="outlined"
                 >
-                  &times;
-                </button>
+                  Delete
+                </Button>
               </li>
             );
           })}

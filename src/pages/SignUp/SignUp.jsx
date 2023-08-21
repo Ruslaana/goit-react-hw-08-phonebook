@@ -13,16 +13,10 @@ const SignUpPage = () => {
     event.preventDefault();
 
     const form = event.currentTarget;
-    console.log(form.elements);
-
-  // const name = form.elements.userName ? form.elements.userName.value : '';
-  // const email = form.elements.userEmail ? form.elements.userEmail.value : '';
-  // const password = form.elements.userPassword ? form.elements.userPassword.value : '';
   
   const name = `${form.elements.firstName.value} ${form.elements.lastName.value}`;
   const email = form.elements.email.value;
   const password = form.elements.password.value;
-  console.log(name, email, password);
 
     dispatch(
       registerUserThunk({
