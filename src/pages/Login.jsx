@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
-import { Avatar, Box, Button, Checkbox, Container, CssBaseline, FormControlLabel, TextField, Typography, createTheme } from '@mui/material';
+import { Box, Button, Checkbox, Container, CssBaseline, FormControlLabel, TextField, Typography, createTheme } from '@mui/material';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
@@ -41,8 +41,8 @@ const LoginPage = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          </Avatar>
+          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          </Avatar> */}
           <Typography component="h1" variant="h5">
             Log in
           </Typography>

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const StyledContainer = styled.p`
+export const StyledContainer = styled.div`
   display: inline;
   align-items: center;
   justify-content: center;
