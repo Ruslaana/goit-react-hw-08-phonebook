@@ -56,7 +56,10 @@ const Layout = () => {
                 ) : (
                   <>
                     <StyledNavLink to="/contacts">Contacts</StyledNavLink>
-                    <Button variant="contained" onClick={handleLogOut}>
+                    <Button 
+                    style={{ position: 'absolute', right: '80px' }}
+                    variant="contained" 
+                    onClick={handleLogOut}>
                       Log Out
                     </Button>
                     <StyledAvatar>

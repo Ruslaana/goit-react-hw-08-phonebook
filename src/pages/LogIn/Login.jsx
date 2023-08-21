@@ -27,10 +27,8 @@ const LoginPage = () => {
   };
 
   if (authenticated) return <Navigate to="/contacts" />;
-  // const defaultTheme = createTheme();
 
   return (
-    // <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -80,7 +78,6 @@ const LoginPage = () => {
           </Box>
         </Box>
       </Container>
-    // </ThemeProvider>
   );
 }
 

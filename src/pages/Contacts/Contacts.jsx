@@ -47,11 +47,6 @@ const Contacts = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    // const form = event.currentTarget;
-
-    // const name = form.elements.contactName.value;
-    // const number = form.elements.contactNumber.value;
-
     if (contacts.some(contact => contact.name === name))
       return alert(`Contact with name ${name} already exists!`);
 
