@@ -2,10 +2,10 @@ import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
-import PrivateRoute from './components/PrivateRoute';
-import Layout from './components/Layout/Layout';
 import { selectAuthentificated, selectToken } from 'redux/selectors';
 import { refreshUserThunk } from 'redux/operations';
+import PrivateRoute from './PrivateRoute';
+import Layout from './Layout/Layout';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));

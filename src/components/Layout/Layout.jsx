@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/selectors';
 import { logOutUserThunk } from 'redux/operations';
-import Loader from '../Loader/Loader';
 import { StyledA, StyledAvatar, StyledFooter, StyledNavLink, StyledP } from './Layout.styled';
 import {
   AppBar,
@@ -15,6 +14,7 @@ import {
   Typography,
 } from '@mui/material';
 import { yellow } from '@mui/material/colors';
+import Loader from 'components/Loader/Loader';
 
 const Layout = () => {
   const authentificated = useSelector(selectAuthentificated);
