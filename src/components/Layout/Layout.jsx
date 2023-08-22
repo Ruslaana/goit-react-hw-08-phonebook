@@ -14,6 +14,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material';
+import { yellow } from '@mui/material/colors';
 
 const Layout = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -63,7 +64,7 @@ const Layout = () => {
                       Log Out
                     </Button>
                     <StyledAvatar>
-                      <Avatar src="/broken-image.jpg" />
+                    <Avatar sx={{ bgcolor: yellow[500] }}></Avatar>
                     </StyledAvatar>
                   </>
                 )}
