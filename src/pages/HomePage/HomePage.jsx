@@ -14,8 +14,7 @@ const HomePage = () => {
           Here you can register, add, delete and check your contacts 📖
         </StyledText>
         <StyledText>
-          In Contacts application used: 
-          React, React Hooks, React Router,
+          In Contacts application used: React, React Hooks, React Router,
           PropTypes, Redux, Redux Toolkit, Redux Persist, Material UI
         </StyledText>
       </StyledContainer>
