@@ -10,9 +10,10 @@ export const StyledParagraph = styled.h1`
 text-align: center;
 padding-top: 80px;
 height: 100%;
-font-weight: 500;
+font-weight: 700;
 `
 
 export const StyledText = styled.p`
   text-align: center;
+  font-weight: 600;
 `;
